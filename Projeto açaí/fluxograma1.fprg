@@ -1,0 +1,349 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="SENAI"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-05-24 01:56:04 "/>
+        <attribute name="created" value="U0VOQUk7RFNOMzAxMTE5NjI2NzsyMDIyLTA1LTIwOyIwMzozOToxNCAiOzIzMDE="/>
+        <attribute name="edited" value="U0VOQUk7RFNOMzAxMTE5NjI2NzsyMDIyLTA1LTIwOyIwNTowMzo0OSAiOzY7U0VOQUk7RFNOMzAxMTE5NjI2NzsyMDIyLTA1LTA0OyIwNDozMTozMSAiO2ZsdXhvZ3JhbWEuZnByZzs2Mzgz"/>
+        <attribute name="edited" value="bXNpbHY7TEFQVE9QLU41SE9CMUdLOzIwMjItMDUtMjE7IjA5OjQ5OjQzICI7MjsyOTE0"/>
+        <attribute name="edited" value="U0VOQUk7RFNOMzAxMTE5NjI2NzsyMDIyLTA1LTI0OyIwMTo1NjowNCAiOzU7MjQxMw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="quantAdic, retirada, entrega, valor, sorvete, acai, pedido, valorTamanho, opcao, sabor, pre&#231;o, adicional, embalagem" type="Integer" array="False" size=""/>
+            <declare name="endereco, tamanho, adicionais, leite, cobertura, sabor1, segSabor, email" type="String" array="False" size=""/>
+            <output expression="&quot;Bom dia, somos o Universo do a&#231;a&#237;, digite seu pedido, para a&#231;a&#237; digite 1 e para sorvete digite 2 e para milkshake digite 3&quot;" newline="True"/>
+            <input variable="opcao"/>
+            <if expression="opcao=1">
+                <then>
+                    <output expression="&quot;Escolha o tamanho do seu a&#231;a&#237;, pequeno (6), m&#233;dio (8), grande (10)&quot;" newline="True"/>
+                    <input variable="tamanho"/>
+                    <output expression="&quot;Digite o valor do tamanho do seu a&#231;a&#237;&quot;" newline="True"/>
+                    <input variable="valorTamanho"/>
+                    <output expression="&quot;Cada adicional do seu a&#231;a&#237; s&#227;o 2 reais, voc&#234; deseja colocar algum adicional no seu a&#231;a&#237;? Se sim digite 1, se n&#227;o digite 2&quot;" newline="True"/>
+                    <input variable="adicional"/>
+                    <if expression="adicional=1">
+                        <then>
+                            <output expression="&quot;Quantos adicionais voc&#234; deseja?&quot;" newline="True"/>
+                            <input variable="quantAdic"/>
+                            <output expression="&quot;Escreva quais s&#227;o as adicionais que voc&#234; deseja, temos  Leite em p&#243;, Leite Condensado, Confeitos de Chocolate, Pa&#231;oca, Morango, Gotas de Chocolate, Banana, Castanhas e Granola&quot;" newline="True"/>
+                            <input variable="adicionais"/>
+                            <output expression="&quot;Para entrega, o valor do frete &#233; de 5 reais, para retirada na loja digite 1 e para entrega digite 2&quot;" newline="True"/>
+                            <input variable="retirada"/>
+                            <if expression="retirada=1">
+                                <then>
+                                    <assign variable="valor" expression="valorTamanho+ (quantAdic*2)"/>
+                                    <output expression="&quot;Seu pedido para retirada foi um a&#231;a&#237;:&quot;" newline="True"/>
+                                    <output expression="tamanho" newline="True"/>
+                                    <output expression="&quot;Com:&quot;" newline="True"/>
+                                    <output expression="adicionais" newline="True"/>
+                                    <output expression="&quot;No valor de:&quot;" newline="True"/>
+                                    <output expression="valor" newline="True"/>
+                                    <output expression="&quot;Obrigada pela pref&#234;rencia, entre 10-20 minutos voc&#234; j&#225; pode retirar o seu pedido na loja e realizar seu pagamento, volte sempre!!&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Digite seu endere&#231;o para entrega:&quot;" newline="True"/>
+                                    <input variable="endereco"/>
+                                    <output expression="&quot;Digite seu e-mail:&quot;" newline="True"/>
+                                    <input variable="email"/>
+                                    <output expression="&quot;Voc&#234; deseja que seu pedido seja entregue em uma embalagem t&#233;rmica por mais 1 real ? A embalagem t&#233;rmica garante uma melhor conserva&#231;&#227;o do a&#231;a&#237; mantendo sua temperatura . Se deseja a embalagem t&#233;rmica digite 1, se n&#227;o digite 2&quot;" newline="True"/>
+                                    <input variable="embalagem"/>
+                                    <if expression="embalagem=1">
+                                        <then>
+                                            <assign variable="valor" expression="valorTamanho+(quantAdic*2)+5+1"/>
+                                            <output expression="&quot;Seu pedido para entrega foi um a&#231;a&#237; com embalagem t&#233;rmica:&quot;" newline="True"/>
+                                            <output expression="tamanho" newline="True"/>
+                                            <output expression="&quot;Com:&quot;" newline="True"/>
+                                            <output expression="adicionais" newline="True"/>
+                                            <output expression="&quot;No valor de:&quot;" newline="True"/>
+                                            <output expression="valor" newline="True"/>
+                                            <output expression="&quot;Para entrega no endere&#231;o:&quot;" newline="True"/>
+                                            <output expression="endereco" newline="True"/>
+                                            <output expression="&quot;Obrigada pela pref&#234;rencia, dentro de alguns minutos  voc&#234; receber&#225; um e-mail para confirma&#231;&#227;o do pedido e realizar o pagamento. Entre 30-40 minutos o seu pedido ser&#225; entregue, bom apetite!!&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="valor" expression="valorTamanho+(quantAdic*2)+5"/>
+                                            <output expression="&quot;Seu pedido para entrega foi um a&#231;a&#237;:&quot;" newline="True"/>
+                                            <output expression="tamanho" newline="True"/>
+                                            <output expression="&quot;Com:&quot;" newline="True"/>
+                                            <output expression="adicionais" newline="True"/>
+                                            <output expression="&quot;No valor de:&quot;" newline="True"/>
+                                            <output expression="valor" newline="True"/>
+                                            <output expression="&quot;Para entrega no endere&#231;o:&quot;" newline="True"/>
+                                            <output expression="endereco" newline="True"/>
+                                            <output expression="&quot;Obrigada pela pref&#234;rencia, dentro de alguns minutos  voc&#234; receber&#225; um e-mail para confirma&#231;&#227;o do pedido e realizar o pagamento. Entre 30-40 minutos o seu pedido ser&#225; entregue, bom apetite!!&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <output expression="&quot;Para entrega, o valor do frete &#233; de 5 reais, para retirada na loja digite 1 e para entrega digite 2&quot;" newline="True"/>
+                            <input variable="retirada"/>
+                            <if expression="retirada=1">
+                                <then>
+                                    <output expression="&quot;Seu pedido para retirada foi um a&#231;a&#237; sem adicional:&quot;" newline="True"/>
+                                    <output expression="tamanho" newline="True"/>
+                                    <output expression="&quot;No valor de:&quot;" newline="True"/>
+                                    <output expression="valorTamanho" newline="True"/>
+                                    <output expression="&quot;Obrigada pela pref&#234;rencia, entre 10-20 minutos voc&#234; j&#225; pode retirar o seu pedido na loja e realizar seu pagamento, volte sempre!!&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Digite seu endere&#231;o para entrega:&quot;" newline="True"/>
+                                    <input variable="endereco"/>
+                                    <output expression="&quot;Digite seu e-mail:&quot;" newline="True"/>
+                                    <input variable="email"/>
+                                    <output expression="&quot;Voc&#234; deseja que seu pedido seja entregue em uma embalagem t&#233;rmica por mais 1 real ? A embalagem t&#233;rmica garante uma melhor conserva&#231;&#227;o do a&#231;a&#237; mantendo sua temperatura . Se deseja a embalagem t&#233;rmica digite 1, se n&#227;o digite 2&quot;" newline="True"/>
+                                    <input variable="embalagem"/>
+                                    <if expression="embalagem=1">
+                                        <then>
+                                            <assign variable="valor" expression="valorTamanho+5+(1)"/>
+                                            <output expression="&quot;Seu pedido para entrega foi um a&#231;a&#237; sem adicional com embalagem t&#233;rmica:&quot;" newline="True"/>
+                                            <output expression="tamanho" newline="True"/>
+                                            <output expression="&quot;No valor de:&quot;" newline="True"/>
+                                            <output expression="valor" newline="True"/>
+                                            <output expression="&quot;Para entrega no endere&#231;o:&quot;" newline="True"/>
+                                            <output expression="endereco" newline="True"/>
+                                            <output expression="&quot;Obrigada pela pref&#234;rencia, dentro de alguns minutos  voc&#234; receber&#225; um e-mail para confirma&#231;&#227;o do pedido e realizar o pagamento. Entre 30-40 minutos o seu pedido ser&#225; entregue, bom apetite!!&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="valor" expression="valorTamanho+5"/>
+                                            <output expression="&quot;Seu pedido para entrega foi um a&#231;a&#237; sem adicional:&quot;" newline="True"/>
+                                            <output expression="tamanho" newline="True"/>
+                                            <output expression="&quot;No valor de:&quot;" newline="True"/>
+                                            <output expression="valor" newline="True"/>
+                                            <output expression="&quot;Para entrega no endere&#231;o:&quot;" newline="True"/>
+                                            <output expression="endereco" newline="True"/>
+                                            <output expression="&quot;Obrigada pela pref&#234;rencia, dentro de alguns minutos  voc&#234; receber&#225; um e-mail para confirma&#231;&#227;o do pedido e realizar o pagamento. Entre 30-40 minutos o seu pedido ser&#225; entregue, bom apetite!!&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="opcao=2">
+                        <then>
+                            <output expression="&quot;Escolha o tamanho do seu sorvete, 300ml (10), 450ml (12), 700ml (16)&quot;" newline="True"/>
+                            <input variable="tamanho"/>
+                            <output expression="&quot;Digite o valor do tamanho do seu sorvete&quot;" newline="True"/>
+                            <input variable="valorTamanho"/>
+                            <output expression="&quot;Escolha o sabor do seu sorvete temos Creme, Creme com cookies, Chocolate com Nozes, Menta com Chocolate, Chocolate, Baunilha, Morango, Pistache, C&#233;u Azul, Flocos, Nutella, Sorvete Trufado, Abacaxi, Brigadeiro, Chiclete,  Maracuj&#225;, C&#244;co e Sensa&#231;&#227;o&quot;" newline="True"/>
+                            <input variable="sabor"/>
+                            <output expression="&quot;Cada adicional do seu sorvete &#233; 1 real, quantos adicionais voc&#234; deseja?&quot;" newline="True"/>
+                            <input variable="quantAdic"/>
+                            <output expression="&quot;Escreva quais s&#227;o os adicionais que voc&#234; deseja, temos Morango, Calda, Granola, Pa&#231;oca, &#211;reo, Cereais e Nozes, Jujubas, Chocolate e Marshmallow&quot;" newline="True"/>
+                            <input variable="adicionais"/>
+                            <output expression="&quot;Para entrega, o valor do frete &#233; de 5 reais, para retirada na loja digite 1 e para entrega digite 2&quot;" newline="True"/>
+                            <input variable="retirada"/>
+                            <if expression="retirada=1">
+                                <then>
+                                    <assign variable="valor" expression="valorTamanho+ (quantAdic*1)"/>
+                                    <output expression="&quot;Seu pedido para retirada foi um sorvete de:&quot;" newline="True"/>
+                                    <output expression="tamanho" newline="True"/>
+                                    <output expression="&quot;De&quot;" newline="True"/>
+                                    <output expression="sabor" newline="True"/>
+                                    <output expression="&quot;Com:&quot;" newline="True"/>
+                                    <output expression="adicionais" newline="True"/>
+                                    <output expression="&quot;No valor de:&quot;" newline="True"/>
+                                    <output expression="valor" newline="True"/>
+                                    <output expression="&quot;Obrigada pela pref&#234;rencia, entre 10-20 minutos voc&#234; j&#225; pode retirar o seu pedido na loja e realizar seu pagamento, volte sempre!!&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Digite seu endere&#231;o para entrega:&quot;" newline="True"/>
+                                    <input variable="endereco"/>
+                                    <output expression="&quot;Digite seu e-mail:&quot;" newline="True"/>
+                                    <input variable="email"/>
+                                    <output expression="&quot;Voc&#234; deseja que seu pedido seja entregue em uma embalagem t&#233;rmica por mais 1 real ? A embalagem t&#233;rmica garante uma melhor conserva&#231;&#227;o do sorvete mantendo sua temperatura . Se deseja a embalagem t&#233;rmica digite 1, se n&#227;o digite 2&quot;" newline="True"/>
+                                    <input variable="embalagem"/>
+                                    <if expression="embalagem=1">
+                                        <then>
+                                            <assign variable="valor" expression="valorTamanho+ (quantAdic*1)+1+5"/>
+                                            <output expression="&quot;Seu pedido para entrega foi um sorvete com embalagem t&#233;rmica de:&quot;" newline="True"/>
+                                            <output expression="tamanho" newline="True"/>
+                                            <output expression="&quot;De&quot;" newline="True"/>
+                                            <output expression="sabor" newline="True"/>
+                                            <output expression="&quot;Com:&quot;" newline="True"/>
+                                            <output expression="adicionais" newline="True"/>
+                                            <output expression="&quot;No valor de:&quot;" newline="True"/>
+                                            <output expression="valor" newline="True"/>
+                                            <output expression="&quot;Para entrega no endere&#231;o:&quot;" newline="True"/>
+                                            <output expression="endereco" newline="True"/>
+                                            <output expression="&quot;Obrigada pela pref&#234;rencia, dentro de alguns minutos  voc&#234; receber&#225; um e-mail para confirma&#231;&#227;o do pedido e realizar o pagamento. Entre 30-40 minutos o seu pedido ser&#225; entregue, bom apetite!!&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="valor" expression="valorTamanho+ (quantAdic*1)+5"/>
+                                            <output expression="&quot;Seu pedido para entrega foi um sorvete de:&quot;" newline="True"/>
+                                            <output expression="tamanho" newline="True"/>
+                                            <output expression="&quot;De&quot;" newline="True"/>
+                                            <output expression="sabor" newline="True"/>
+                                            <output expression="&quot;Com:&quot;" newline="True"/>
+                                            <output expression="adicionais" newline="True"/>
+                                            <output expression="&quot;No valor de:&quot;" newline="True"/>
+                                            <output expression="valor" newline="True"/>
+                                            <output expression="&quot;Para entrega no endere&#231;o:&quot;" newline="True"/>
+                                            <output expression="endereco" newline="True"/>
+                                            <output expression="&quot;Obrigada pela pref&#234;rencia, dentro de alguns minutos  voc&#234; receber&#225; um e-mail para confirma&#231;&#227;o do pedido e realizar o pagamento. Entre 30-40 minutos o seu pedido ser&#225; entregue, bom apetite!!&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <output expression="&quot;Escolha o tamanho do seu MilkShake, 300ml (10), 450ml (12), 700ml (16)&quot;" newline="True"/>
+                            <input variable="tamanho"/>
+                            <output expression="&quot;Digite o valor do tamanho do seu MilkShake&quot;" newline="True"/>
+                            <input variable="valorTamanho"/>
+                            <output expression="&quot;Escolha o tipo do seu leite: Leite de am&#234;ndoa, Leite de soja, Leite integral ou Leite de aveia&quot;" newline="True"/>
+                            <input variable="leite"/>
+                            <output expression="&quot;Para um sabor de sorvete digite 1, para dois sabores digite 2, com um acr&#233;scimo de 1 real&quot;" newline="True"/>
+                            <input variable="sabor"/>
+                            <if expression="sabor=1">
+                                <then>
+                                    <output expression="&quot;Escolha o sabor do seu MilkShake: Creme, Creme com cookies, Chocolate com Nozes, Menta com Chocolate, Chocolate, Baunilha, Morango, Pistache, C&#233;u Azul, Flocos, Nutella, Sorvete Trufado, Abacaxi, Brigadeiro, Chiclete,  Maracuj&#225;, C&#244;co, Sensa&#231;&#227;o.&quot;" newline="True"/>
+                                    <input variable="sabor"/>
+                                    <output expression="&quot;Escolha o adiconal: Manteiga de am&#234;ndoim, Calda de Morango, Calda de Chocolate, Calda de Caramelo, Nutella, Calda de Maracuj&#225; &quot;" newline="True"/>
+                                    <input variable="adicionais"/>
+                                    <output expression="&quot;Escolha as coberturas: Chantilly, Granulado, Castanhas, Gotas de Chocolate ou Morango&quot;" newline="True"/>
+                                    <input variable="cobertura"/>
+                                    <output expression="&quot;Pronto! Para entrega, o valor do frete &#233; de 5 reais, para retirada na loja digite 1 e para entrega digite 2&quot;" newline="True"/>
+                                    <input variable="retirada"/>
+                                    <if expression="retirada=1">
+                                        <then>
+                                            <output expression="&quot;Seu pedido para retirada foi um MilShake  de:&quot;" newline="True"/>
+                                            <output expression="tamanho" newline="True"/>
+                                            <output expression="&quot;De:&quot;" newline="True"/>
+                                            <output expression="sabor" newline="True"/>
+                                            <output expression="&quot;Com&quot;" newline="True"/>
+                                            <output expression="adicionais" newline="True"/>
+                                            <output expression="cobertura" newline="True"/>
+                                            <output expression="&quot;No valor de:&quot;" newline="True"/>
+                                            <output expression="valor" newline="True"/>
+                                            <output expression="&quot;Obrigada pela pref&#234;rencia, entre 10-20 minutos voc&#234; j&#225; pode retirar o seu pedido na loja e realizar seu pagamento, volte sempre!!&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;Digite seu endere&#231;o para entrega:&quot;" newline="True"/>
+                                            <input variable="endereco"/>
+                                            <output expression="&quot;Digite seu e-mail:&quot;" newline="True"/>
+                                            <input variable="email"/>
+                                            <output expression="&quot;Voc&#234; deseja que seu pedido seja entregue em uma embalagem t&#233;rmica por mais 1 real ? A embalagem t&#233;rmica garante uma melhor conserva&#231;&#227;o do MilkShake mantendo sua temperatura . Se deseja a embalagem t&#233;rmica digite 1, se n&#227;o digite 2&quot;" newline="True"/>
+                                            <input variable="embalagem"/>
+                                            <if expression="embalagem=1">
+                                                <then>
+                                                    <assign variable="valor" expression="valorTamanho+1+5"/>
+                                                    <output expression="&quot;Digite seu endere&#231;o para entrega:&quot;" newline="True"/>
+                                                    <input variable="endereco"/>
+                                                    <output expression="&quot;Seu pedido para entrega foi um MilShake em embalagem t&#233;rmica de:&quot;" newline="True"/>
+                                                    <output expression="tamanho" newline="True"/>
+                                                    <output expression="&quot;De:&quot;" newline="True"/>
+                                                    <output expression="sabor" newline="True"/>
+                                                    <output expression="&quot;Com:&quot;" newline="True"/>
+                                                    <output expression="adicionais" newline="True"/>
+                                                    <output expression="cobertura" newline="True"/>
+                                                    <output expression="&quot;No valor de:&quot;" newline="True"/>
+                                                    <output expression="valor" newline="True"/>
+                                                    <output expression="&quot;Para entrega no endere&#231;o:&quot;" newline="True"/>
+                                                    <output expression="endereco" newline="True"/>
+                                                    <output expression="&quot;Obrigada pela pref&#234;rencia, dentro de alguns minutos  voc&#234; receber&#225; um e-mail para confirma&#231;&#227;o do pedido e realizar o pagamento. Entre 30-40 minutos o seu pedido ser&#225; entregue, bom apetite!!&quot;" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <assign variable="valor" expression="valorTamanho+5"/>
+                                                    <output expression="&quot;Digite seu endere&#231;o para entrega:&quot;" newline="True"/>
+                                                    <input variable="endereco"/>
+                                                    <output expression="&quot;Seu pedido para entrega foi um MilShake de:&quot;" newline="True"/>
+                                                    <output expression="tamanho" newline="True"/>
+                                                    <output expression="&quot;De:&quot;" newline="True"/>
+                                                    <output expression="sabor" newline="True"/>
+                                                    <output expression="&quot;Com:&quot;" newline="True"/>
+                                                    <output expression="adicionais" newline="True"/>
+                                                    <output expression="cobertura" newline="True"/>
+                                                    <output expression="&quot;No valor de:&quot;" newline="True"/>
+                                                    <output expression="valor" newline="True"/>
+                                                    <output expression="&quot;Para entrega no endere&#231;o:&quot;" newline="True"/>
+                                                    <output expression="endereco" newline="True"/>
+                                                    <output expression="&quot;Obrigada pela pref&#234;rencia, dentro de alguns minutos  voc&#234; receber&#225; um e-mail para confirma&#231;&#227;o do pedido e realizar o pagamento. Entre 30-40 minutos o seu pedido ser&#225; entregue, bom apetite!!&quot;" newline="True"/>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Escolha o sabor do seu MilkShake: Creme, Creme com cookies, Chocolate com Nozes, Menta com Chocolate, Chocolate, Baunilha, Morango, Pistache, C&#233;u Azul, Flocos, Nutella, Sorvete Trufado, Abacaxi, Brigadeiro, Chiclete,  Maracuj&#225;, C&#244;co, Sensa&#231;&#227;o.&quot;" newline="True"/>
+                                    <input variable="sabor1"/>
+                                    <output expression="&quot;Escolha o segundo sabor:&quot;" newline="True"/>
+                                    <input variable="segSabor"/>
+                                    <output expression="&quot;Escolha o adiconal: Manteiga de am&#234;ndoim, Calda de Morango, Calda de Chocolate, Calda de Caramelo, Nutella, Calda de Maracuj&#225; &quot;" newline="True"/>
+                                    <input variable="adicionais"/>
+                                    <output expression="&quot;Escolha as coberturas: Chantilly, Granulado, Castanhas, Gotas de Chocolate ou Morango&quot;" newline="True"/>
+                                    <input variable="cobertura"/>
+                                    <output expression="&quot;Pronto! Para entrega, o valor do frete &#233; de 5 reais, para retirada na loja digite 1 e para entrega digite 2&quot;" newline="True"/>
+                                    <input variable="retirada"/>
+                                    <if expression="retirada=1">
+                                        <then>
+                                            <assign variable="valor" expression="valorTamanho+1"/>
+                                            <output expression="&quot;Seu pedido para retirada foi um MilShake de:&quot;" newline="True"/>
+                                            <output expression="tamanho" newline="True"/>
+                                            <output expression="&quot;De:&quot;" newline="True"/>
+                                            <output expression="sabor1" newline="True"/>
+                                            <output expression="segSabor" newline="True"/>
+                                            <output expression="adicionais" newline="True"/>
+                                            <output expression="cobertura" newline="True"/>
+                                            <output expression="&quot;No valor de:&quot;" newline="True"/>
+                                            <output expression="valor" newline="True"/>
+                                            <output expression="&quot;Obrigada pela pref&#234;rencia, entre 10-20 minutos voc&#234; j&#225; pode retirar o seu pedido na loja e realizar seu pagamento, volte sempre!!&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;Digite seu endere&#231;o para entrega:&quot;" newline="True"/>
+                                            <input variable="endereco"/>
+                                            <output expression="&quot;Digite seu e-mail:&quot;" newline="True"/>
+                                            <input variable="email"/>
+                                            <output expression="&quot;Voc&#234; deseja que seu pedido seja entregue em uma embalagem t&#233;rmica por mais 1 real ? A embalagem t&#233;rmica garante uma melhor conserva&#231;&#227;o do MilkShake mantendo sua temperatura . Se deseja a embalagem t&#233;rmica digite 1, se n&#227;o digite 2&quot;" newline="True"/>
+                                            <input variable="embalagem"/>
+                                            <if expression="embalagem=1">
+                                                <then>
+                                                    <assign variable="valor" expression="valorTamanho+1+5"/>
+                                                    <output expression="&quot;Seu pedido para entrega foi um MilShake em embalagem t&#233;rmica de:&quot;" newline="True"/>
+                                                    <output expression="tamanho" newline="True"/>
+                                                    <output expression="&quot;De:&quot;" newline="True"/>
+                                                    <output expression="sabor1" newline="True"/>
+                                                    <output expression="&quot;Com:&quot;" newline="True"/>
+                                                    <output expression="adicionais" newline="True"/>
+                                                    <output expression="cobertura" newline="True"/>
+                                                    <output expression="&quot;No valor de:&quot;" newline="True"/>
+                                                    <output expression="valor" newline="True"/>
+                                                    <output expression="&quot;Para entrega no endere&#231;o:&quot;" newline="True"/>
+                                                    <output expression="endereco" newline="True"/>
+                                                    <output expression="&quot;Obrigada pela pref&#234;rencia, dentro de alguns minutos  voc&#234; receber&#225; um e-mail para confirma&#231;&#227;o do pedido e realizar o pagamento. Entre 30-40 minutos o seu pedido ser&#225; entregue, bom apetite!!&quot;" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <assign variable="valor" expression="valorTamanho+5"/>
+                                                    <output expression="&quot;Seu pedido para entrega foi um MilShake de:&quot;" newline="True"/>
+                                                    <output expression="tamanho" newline="True"/>
+                                                    <output expression="&quot;Sabores:&quot;" newline="True"/>
+                                                    <output expression="sabor1" newline="True"/>
+                                                    <output expression="segSabor" newline="True"/>
+                                                    <output expression="&quot;Com:&quot;" newline="True"/>
+                                                    <output expression="adicionais" newline="True"/>
+                                                    <output expression="cobertura" newline="True"/>
+                                                    <output expression="&quot;No valor de:&quot;" newline="True"/>
+                                                    <output expression="valor" newline="True"/>
+                                                    <output expression="&quot;Para entrega no endere&#231;o:&quot;" newline="True"/>
+                                                    <output expression="endereco" newline="True"/>
+                                                    <output expression="&quot;Obrigada pela pref&#234;rencia, dentro de alguns minutos  voc&#234; receber&#225; um e-mail para confirma&#231;&#227;o do pedido e realizar o pagamento. Entre 30-40 minutos o seu pedido ser&#225; entregue, bom apetite!!&quot;" newline="True"/>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
